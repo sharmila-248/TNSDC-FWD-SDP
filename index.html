@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Beautician Portfolio — Sharmila.N</title>
+
+  <style>
+
+    /* ---------- Color system (shades of black) ---------- */
+
+    :root{
+
+      --black-100:#0b0b0b; /* page bg */
+
+      --black-90:#111111;
+
+      --black-80:#171717;
+
+      --black-70:#1f1f1f;
+
+      --black-60:#2a2a2a;
+
+      --black-50:#3a3a3a;
+
+      --muted: #8c8c8c;
+
+      --glass: rgba(255,255,255,0.03);
+
+      --accent: rgba(255,255,255,0.06);
+
+      --glass-2: rgba(255,255,255,0.02);
+
+      --radius: 14px;
+
+      --ff-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+      --transition: 220ms cubic-bezier(.2,.9,.3,1);
+
+    }
+
+    *{box-sizing:border-box}
+
+    html,body{height:100%}
+
+    body{
+
+      margin:0;
+
+      font-family:var(--ff-sans);
+
+      background:linear-gradient(180deg,var(--black-100),var(--black-90));
+
+      color:#fff;
+
+      -webkit-font-smoothing:antialiased;
+
+      -moz-osx-font-smoothing:grayscale;
+
+      line-height:1.45;
+
+      padding:24px;
+
+    }
+
+    /* Container */
+
+    .wrap{
+
+      max-width:1100px;
+
+      margin:0 auto;
+
+      background:linear-gradient(180deg,var(--black-80),var(--black-70));
+
+      border-radius:18px;
+
+      padding:28px;
+
+      box-shadow:0 8px 30px rgba(0,0,0,0.7);
+
+      border:1px solid rgba(255,255,255,0.03);
+
+      backdrop-filter: blur(6px);
+
+    }
+
+    /* Header */
+
+    header{
+
+      display:flex;
+
+      gap:20px;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      margin-bottom:18px;
+
+    }
+
+    .brand{
+
+      display:flex;gap:14px;align-items:center;
+
+    }
+
+    .brand .logo{
+
+      width:56px;height:56px;border-radius:12px;overflow:hidden;
+
+      background:linear-gradient(180deg,var(--black-60),var(--black-50));
+
+      display:flex;align-items:center;justify-content:center;
+
+      border:1px solid rgba(255,255,255,0.03);
+
+      box-shadow: inset 0 -4px 8px rgba(0,0,0,0.6);
+
+    }
+
+    .brand h1{font-size:18px;margin:0;letter-spacing:0.4px}
+
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:12px}
+
+    nav a{
+
+      color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;
+
+      transition:var(--transition);
+
+      font-size:14px
+
+    }
+
+    nav a:hover{color:#fff;background:var(--accent);transform:translateY(-2px)}
+
+    /* Sections */
+
+    section{margin-bottom:20px}
+
+    section h3{margin:0 0 12px 0;font-size:16px}
+
+    /* Grid Cards */
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+    .card{
+
+      background:var(--black-60);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+
+      transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
+    }
+
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6);border-color:rgba(255,255,255,0.06)}
+
+    .card img{width:100%;height:170px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+
+    .card h4{margin:0 0 6px 0;font-size:15px}
+
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Contact area */
+
+    .contact{
+
+      display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap
+
+    }
+
+    .contact .left{flex:1;min-width:240px}
+
+    .contact .right{flex:1;min-width:260px}
+
+    .contact .info{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+    .contact .info p{margin:8px 0;color:var(--muted)}
+
+    form{display:grid;gap:10px}
+
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:#fff;outline:none}
+
+    input:focus,textarea:focus{border-color:rgba(255,255,255,0.14);transform:translateY(-2px)}
+
+    button{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:10px 12px;border-radius:10px;color:#fff;cursor:pointer;transition:var(--transition)}
+
+    button:hover{background:var(--accent);transform:translateY(-3px)}
+
+    /* small screens */
+
+    @media (max-width:900px){
+
+      .grid{grid-template-columns:repeat(2,1fr)}
+
+    }
+
+    @media (max-width:560px){
+
+      .grid{grid-template-columns:repeat(1,1fr)}
+
+      nav{display:none}
+
+      header{gap:8px}
+
+      .wrap{padding:18px}
+
+    }
+
+    /* subtle entrance animations */
+
+    .fade-up{opacity:0;transform:translateY(10px);animation:fadeUp 700ms forwards}
+
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* small utilities */
+
+    .muted{color:var(--muted)}
+
+    .mb-8{margin-bottom:8px}
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <header class="fade-up">
+
+      <div class="brand">
+
+        <div class="logo" aria-hidden="true">
+
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#101010" />
+
+            <text x="12" y="16" text-anchor="middle" fill="#fff" font-size="10" font-family="sans-serif">SN</text>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <h1>Sharmila.N</h1>
+
+          <p class="muted">Professional Beautician • Makeup Artist</p>
+
+        </div>
+
+      </div>
+
+      <nav aria-label="Main navigation">
+
+        <a href="#about">About</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#achievements">Achievements</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+    </header>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="fade-up">
+
+      <h3>About Me</h3>
+
+      <div class="grid">
+
+        <!-- Profile Card -->
+
+        <article class="card">
+
+          <img src="Profile photo.jpeg" alt="Profile photo">
+
+          <h4>Sharmila.N</h4>
+
+          <p class="muted">Beautician • Bridal Makeup • Skin Care Specialist</p>
+
+        </article>
+
+        <!-- Info Card -->
+
+        <article class="card">
+
+          <h4>Details</h4>
+
+          <p><strong>Phone:</strong> +91 995211107</p>
+
+          <p><strong>Qualification:</strong> B.Sc. Cosmetology</p>
+
+          <p><strong>Email:</strong> s01074454@gmail.com</p>
+
+          <p><strong>Location:</strong> Chennai, India</p>
+
+        </article>
+
+        <!-- Bio Card -->
+
+        <article class="card">
+
+          <h4>About Me</h4>
+
+          <p class="muted">
+
+            I create modern bridal looks and offer skin and hair consultations. 
+
+            My work emphasises natural beauty, long-lasting makeup, and 
+
+            comfortable client experience.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="fade-up">
+
+      <h3>Projects</h3>
+
+      <div class="grid">
+
+        <article class="card">
+
+          <img src="Bridal makeup - project 1.jpeg" alt="Bridal makeup - project 1">
+
+          <h4>Soft Bridal Makeup</h4>
+
+          <p class="muted">Natural finish bridal look for a beach wedding. Soft contouring and long-wear products.</p>
+
+        </article>
+
+        <article class="card">
+
+          <img src="Party glam - project 2.jpeg" alt="Party glam - project 2">
+
+          <h4>Evening Glam</h4>
+
+          <p class="muted">Smokey eyes and dewy base for evening events. Includes lash application.</p>
+
+        </article>
+
+        <article class="card">
+
+          <img src="Skin care consultation - project 3.jpeg" alt="Skin care consultation - project 3">
+
+          <h4>Skin Care Consultation</h4>
+
+          <p class="muted">Personalised skin routine, product recommendations and follow-up plan.</p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements" class="fade-up">
+
+      <h3>Achievements</h3>
+
+      <div class="grid">
+
+        <article class="card">
+
+          <img src="Award 1.jpeg" alt="Award 1">
+
+          <h4>Top Makeup Artist — 2024</h4>
+
+          <p class="muted">Awarded Best Bridal Makeup Artist by XYZ magazine.</p>
+
+        </article>
+
+        <article class="card">
+
+          <img src="Certification.jpeg" alt="Certification">
+
+          <h4>Advanced Cosmetology Certificate</h4>
+
+          <p class="muted">Completed advanced course in skin care and aesthetic treatments.</p>
+
+        </article>
+
+        <article class="card">
+
+          <img src="Press feature.jpeg" alt="Press feature">
+
+          <h4>Featured in Beauty Blog</h4>
+
+          <p class="muted">Interviewed about sustainable makeup practices and product choices.</p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="fade-up">
+
+      <h3>Contact</h3>
+
+      <div class="contact">
+
+        <div class="left info">
+
+          <h4 class="mb-8">Get in touch</h4>
+
+          <p><strong>Phone:</strong> +91 9952111057</p>
+
+          <p><strong>Email:</strong> s01074454@gmail.com</p>
+
+          <p><strong>Location:</strong> Chennai, India</p>
+
+          <p class="muted">Available for bridal bookings, workshops and collaborations. Reply time: typically within 24 hours.</p>
+
+        </div>
+
+        <div class="right info">
+
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+
+            <input type="text" id="name" placeholder="Your name" required>
+
+            <input type="email" id="email" placeholder="Your email" required>
+
+            <input type="text" id="phone" placeholder="Phone (optional)">
+
+            <textarea id="message" rows="4" placeholder="How can I help you?" required></textarea>
+
+            <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px;">
+
+              <button type="reset">Reset</button>
+
+              <button type="submit">Send Message</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="fade-up" style="text-align:center;padding-top:12px;border-top:1px solid rgba(255,255,255,0.02);margin-top:8px;">
+
+      <p class="muted">© <span id="year"></span> Sharmila.N — Beautician. All rights reserved.</p>
+
+    </footer>
+
+  </div>
+
+  <script>
+
+    // set year
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small client-side form handler (demo only)
+
+    function handleSubmit(e){
+
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+
+      const email = document.getElementById('email').value.trim();
+
+      const phone = document.getElementById('phone').value.trim();
+
+      const message = document.getElementById('message').value.trim();
+
+      if(!name || !email || !message){
+
+        alert('Please complete the required fields.');
+
+        return false;
+
+      }
+
+      const summary = `Thanks ${name}! Your message has been prepared.\n\nEmail: ${email}\nPhone: ${phone || '—'}\nMessage: ${message.substring(0,120)}${message.length>120? '...':''}`;
+
+      alert(summary);
+
+      e.target.reset();
+
+      return false;
+
+    }
+
+    // fade-up animation stagger
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.style.animationDelay = (i*80)+'ms' });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
