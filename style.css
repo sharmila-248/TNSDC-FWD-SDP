@@ -1,0 +1,237 @@
+:root{
+
+  --black-100:#0b0b0b;
+
+  --black-90:#111111;
+
+  --black-80:#171717;
+
+  --black-70:#1f1f1f;
+
+  --black-60:#2a2a2a;
+
+  --black-50:#3a3a3a;
+
+  --muted: #8c8c8c;
+
+  --glass: rgba(255,255,255,0.03);
+
+  --accent: rgba(255,255,255,0.06);
+
+  --glass-2: rgba(255,255,255,0.02);
+
+  --radius: 14px;
+
+  --ff-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+  --transition: 220ms cubic-bezier(.2,.9,.3,1);
+
+}
+
+*{box-sizing:border-box}
+
+html,body{height:100%}
+
+body{
+
+  margin:0;
+
+  font-family:var(--ff-sans);
+
+  background:linear-gradient(180deg,var(--black-100),var(--black-90));
+
+  color:#fff;
+
+  line-height:1.45;
+
+  padding:24px;
+
+}
+
+/* Container */
+
+.wrap{
+
+  max-width:1100px;
+
+  margin:0 auto;
+
+  background:linear-gradient(180deg,var(--black-80),var(--black-70));
+
+  border-radius:18px;
+
+  padding:28px;
+
+  box-shadow:0 8px 30px rgba(0,0,0,0.7);
+
+  border:1px solid rgba(255,255,255,0.03);
+
+  backdrop-filter: blur(6px);
+
+}
+
+/* Header */
+
+header{
+
+  display:flex;
+
+  gap:20px;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  margin-bottom:18px;
+
+}
+
+.brand{display:flex;gap:14px;align-items:center;}
+
+.brand .logo{
+
+  width:56px;height:56px;border-radius:12px;overflow:hidden;
+
+  background:linear-gradient(180deg,var(--black-60),var(--black-50));
+
+  display:flex;align-items:center;justify-content:center;
+
+  border:1px solid rgba(255,255,255,0.03);
+
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.6);
+
+}
+
+.brand h1{font-size:18px;margin:0;letter-spacing:0.4px}
+
+.brand p{margin:0;font-size:12px;color:var(--muted)}
+
+nav{display:flex;gap:12px}
+
+nav a{
+
+  color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;
+
+  transition:var(--transition);font-size:14px;
+
+}
+
+nav a:hover{color:#fff;background:var(--accent);transform:translateY(-2px)}
+
+/* Sections */
+
+section{margin-bottom:20px}
+
+section h3{margin:0 0 12px 0;font-size:16px}
+
+/* Grid Cards */
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+.card{
+
+  background:var(--black-60);padding:12px;border-radius:12px;
+
+  border:1px solid rgba(255,255,255,0.03);
+
+  transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
+}
+
+.card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:0 18px 40px rgba(0,0,0,0.6);
+
+  border-color:rgba(255,255,255,0.06);
+
+}
+
+.card img{
+
+  width:100%;height:170px;object-fit:cover;
+
+  border-radius:10px;margin-bottom:10px;
+
+}
+
+.card h4{margin:0 0 6px 0;font-size:15px}
+
+.card p{margin:0;color:var(--muted);font-size:13px}
+
+/* Contact area */
+
+.contact{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+
+.contact .left{flex:1;min-width:240px}
+
+.contact .right{flex:1;min-width:260px}
+
+.contact .info{
+
+  background:var(--glass);padding:14px;border-radius:12px;
+
+  border:1px solid rgba(255,255,255,0.03)
+
+}
+
+.contact .info p{margin:8px 0;color:var(--muted)}
+
+form{display:grid;gap:10px}
+
+input,textarea{
+
+  background:transparent;border:1px solid rgba(255,255,255,0.06);
+
+  padding:10px;border-radius:10px;color:#fff;outline:none;
+
+}
+
+input:focus,textarea:focus{
+
+  border-color:rgba(255,255,255,0.14);
+
+  transform:translateY(-2px);
+
+}
+
+button{
+
+  background:transparent;border:1px solid rgba(255,255,255,0.08);
+
+  padding:10px 12px;border-radius:10px;color:#fff;cursor:pointer;
+
+  transition:var(--transition)
+
+}
+
+button:hover{background:var(--accent);transform:translateY(-3px)}
+
+/* Responsive */
+
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+@media (max-width:560px){
+
+  .grid{grid-template-columns:repeat(1,1fr)}
+
+  nav{display:none}
+
+  header{gap:8px}
+
+  .wrap{padding:18px}
+
+}
+
+/* Animation */
+
+.fade-up{opacity:0;transform:translateY(10px);animation:fadeUp 700ms forwards}
+
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* Utilities */
+
+.muted{color:var(--muted)}
+
+.mb-8{margin-bottom:8px}
